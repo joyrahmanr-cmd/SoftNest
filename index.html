@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>SoftNest — Plush Toys & Stuffed Animals Bangladesh</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink:       #F472B6;
+  --pink-light: #FDE8F3;
+  --pink-mid:   #FBCFE8;
+  --pink-deep:  #DB2777;
+  --offwhite:   #FFF8FB;
+  --cream:      #FFF0F7;
+  --text:       #3B1829;
+  --muted:      #9D6B85;
+  --white:      #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--offwhite);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ═══════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════ */
+.announce-bar {
+  background: var(--pink-deep);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  height: 34px;
+  display: flex;
+  align-items: center;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item {
+  white-space: nowrap;
+  padding: 0 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.marquee-item::after {
+  content: "✦";
+  margin-left: 1.8rem;
+  opacity: 0.4;
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════
+   NAVBAR — DESKTOP
+═══════════════════════════ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1.5px solid var(--pink-mid);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--pink-deep);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+.logo-dot {
+  width: 7px; height: 7px;
+  background: var(--pink);
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 0.4rem;
+}
+.nav-cat {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  border: 1.5px solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+  white-space: nowrap;
+}
+.nav-cat:hover, .nav-cat.active {
+  background: var(--pink-light);
+  border-color: var(--pink);
+  color: var(--pink-deep);
+}
+.cat-icon { font-size: 1rem; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+  background: var(--pink-light);
+  padding: 0.28rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid var(--pink-mid);
+  white-space: nowrap;
+}
+.order-btn {
+  background: var(--pink-deep);
+  color: #fff;
+  padding: 0.52rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  font-family: 'Nunito', sans-serif;
+  white-space: nowrap;
+}
+.order-btn:hover { background: var(--text); transform: scale(1.04); }
+
+/* ═══════════════════════════
+   HERO — DESKTOP
+═══════════════════════════ */
+.hero {
+  min-height: calc(100vh - 98px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 4rem 5% 3rem;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--pink-mid) 0%, transparent 70%);
+  top: -80px; right: -80px;
+  border-radius: 50%;
+  pointer-events: none; z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #FFD6EC 0%, transparent 70%);
+  bottom: -40px; left: 8%;
+  border-radius: 50%;
+  pointer-events: none; z-index: 0;
+}
+
+.hero-left { position: relative; z-index: 1; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--pink-light);
+  border: 1.5px solid var(--pink-mid);
+  color: var(--pink-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.38rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.12;
+  color: var(--text);
+  margin-bottom: 1.1rem;
+}
+.hero h1 em { font-style: italic; color: var(--pink-deep); }
+
+.hero-sub {
+  font-size: 0.98rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 420px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Trust chips */
+.trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.32rem 0.85rem;
+  border-radius: 50px;
+  background: #fff;
+  border: 1.5px solid var(--pink-mid);
+  color: var(--text);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+.cta-primary {
+  background: var(--pink-deep);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 8px 24px rgba(219,39,119,0.25);
+}
+.cta-primary:hover { background: var(--text); transform: translateY(-3px); }
+.cta-secondary {
+  background: #fff;
+  color: var(--text);
+  padding: 0.85rem 1.6rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1.5px solid var(--pink-mid);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.cta-secondary:hover { background: var(--pink-light); transform: translateY(-3px); }
+
+/* Hero right visual */
+.hero-right {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 380px;
+}
+.hero-display {
+  position: relative;
+  width: 360px; height: 360px;
+}
+.center-card {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 190px; height: 190px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 20px 55px rgba(219,39,119,0.15);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-size: 5rem;
+  border: 2px solid var(--pink-light);
+  z-index: 5;
+}
+.center-label {
+  font-size: 0.68rem; font-weight: 800;
+  color: var(--pink-deep);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  margin-top: -0.4rem;
+}
+.orbit-card {
+  position: absolute;
+  width: 86px; height: 86px;
+  background: #fff;
+  border-radius: 18px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-size: 2.1rem;
+  box-shadow: 0 8px 22px rgba(219,39,119,0.12);
+  border: 1.5px solid var(--pink-light);
+  transition: transform 0.3s;
+  cursor: default;
+}
+.orbit-card:hover { transform: scale(1.12) rotate(-5deg) !important; }
+.orbit-label { font-size: 0.58rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
+.oc-1 { top: 0;   left: 50%; transform: translateX(-50%); }
+.oc-2 { top: 50%; right: 0;  transform: translateY(-50%); }
+.oc-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.oc-4 { top: 50%; left: 0;  transform: translateY(-50%); }
+.dot-dec { position: absolute; border-radius: 50%; background: var(--pink-mid); pointer-events: none; }
+.dd1 { width: 12px; height: 12px; top: 25px;  right: 25px; opacity: 0.7; }
+.dd2 { width: 7px;  height: 7px;  bottom: 45px; left: 18px; opacity: 0.5; }
+.dd3 { width: 18px; height: 18px; bottom: 28px; right: 55px; background: var(--pink-light); opacity: 0.8; }
+
+/* ═══════════════════════════
+   POPUP
+═══════════════════════════ */
+.fly-animal {
+  position: fixed;
+  font-size: 2.8rem;
+  pointer-events: none;
+  z-index: 1001;
+  opacity: 0;
+  animation: flyIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.6) forwards;
+  /* prevent layout shift on mobile */
+  will-change: transform, opacity;
+}
+@keyframes flyIn {
+  0%   { opacity: 0; transform: scale(0.2) rotate(-30deg); }
+  60%  { opacity: 1; transform: scale(1.2) rotate(8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes flyOut {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.3) translateY(-60px); }
+}
+.fly-animal.leaving { animation: flyOut 0.4s ease-in forwards; }
+
+.welcome-card {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 1002;
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem 2rem;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(219,39,119,0.25);
+  border: 2px solid var(--pink-mid);
+  opacity: 0;
+  pointer-events: none;
+  animation: cardPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.6) 0.4s forwards;
+  width: 88vw;
+  max-width: 320px;
+}
+@keyframes cardPop {
+  0%   { opacity: 0; transform: translate(-50%,-50%) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+}
+.welcome-emoji { font-size: 2.8rem; display: block; margin-bottom: 0.6rem; }
+.welcome-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--pink-deep);
+  margin-bottom: 0.4rem;
+}
+.welcome-sub {
+  font-size: 0.84rem; color: var(--muted);
+  font-weight: 600; margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+.welcome-close {
+  background: var(--pink-deep); color: #fff;
+  border: none; padding: 0.65rem 2rem;
+  border-radius: 50px; font-size: 0.9rem;
+  font-weight: 800; cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: background 0.2s;
+  pointer-events: all;
+  /* big tap target for mobile */
+  min-height: 44px; min-width: 140px;
+}
+.welcome-close:hover { background: var(--text); }
+
+.popup-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(255,240,247,0.75);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.4s ease 0.1s forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* ═══════════════════════════════════════
+   MOBILE NAV (hamburger)
+═══════════════════════════════════════ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--pink-deep); border-radius: 2px;
+  transition: all 0.3s;
+}
+/* mobile menu drawer */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 98px; left: 0; right: 0;
+  background: #fff;
+  border-bottom: 2px solid var(--pink-mid);
+  padding: 1.25rem 5%;
+  z-index: 199;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(219,39,119,0.1);
+}
+.mobile-menu.open { display: flex; }
+.mobile-cat {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 14px;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text);
+  background: var(--pink-light);
+  border: 1.5px solid var(--pink-mid);
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  /* big tap target */
+  min-height: 48px;
+}
+.mobile-cat.active { background: var(--pink-deep); color: #fff; border-color: var(--pink-deep); }
+.mobile-order {
+  background: var(--pink-deep); color: #fff;
+  border: none; border-radius: 14px;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem; font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════ */
+
+/* Tablet & small laptop */
+@media (max-width: 900px) {
+  .trust-pill { display: none; }
+  .hero { padding: 3rem 5% 2.5rem; }
+}
+
+/* Mobile — everything switches */
+@media (max-width: 680px) {
+
+  /* Announcement bar smaller */
+  .announce-bar { font-size: 0.72rem; height: 30px; }
+
+  /* Nav: hide desktop center & right, show hamburger */
+  .nav-center { display: none; }
+  .order-btn  { display: none; }
+  .hamburger  { display: flex; }
+
+  nav { height: 56px; padding: 0 4%; }
+  .logo { font-size: 1.35rem; }
+
+  /* mobile menu top offset matches nav height + announce bar */
+  .mobile-menu { top: 86px; }
+
+  /* Hero: single column */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 2rem 5% 3rem;
+    text-align: center;
+    gap: 0;
+  }
+  .hero::before { width: 280px; height: 280px; top: -50px; right: -50px; }
+  .hero::after  { width: 180px; height: 180px; }
+
+  .hero-right { display: none; } /* hide the orbit display on mobile */
+
+  .hero-badge { font-size: 0.72rem; margin-bottom: 1rem; }
+
+  .hero h1 { font-size: 1.9rem; margin-bottom: 0.9rem; }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    margin: 0 auto 1.5rem;
+    max-width: 100%;
+  }
+
+  .trust-chips { justify-content: center; gap: 0.4rem; }
+  .chip { font-size: 0.7rem; padding: 0.28rem 0.7rem; }
+
+  .hero-cta {
+    justify-content: center;
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-primary, .cta-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+    /* bigger tap target */
+    min-height: 48px;
+  }
+
+  /* Popup animals — fewer, repositioned for small screen */
+  .fly-animal { font-size: 2.2rem; }
+
+  .welcome-card {
+    width: 90vw;
+    padding: 1.75rem 1.5rem;
+    border-radius: 20px;
+  }
+  .welcome-title { font-size: 1.25rem; }
+  .welcome-sub { font-size: 0.82rem; }
+}
+
+/* Very small phones (iPhone SE etc.) */
+@media (max-width: 380px) {
+  .hero h1 { font-size: 1.65rem; }
+  .chip { font-size: 0.65rem; }
+  .announce-bar { font-size: 0.68rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- POPUP BACKDROP -->
+<div id="popup-backdrop" class="popup-backdrop"></div>
+
+<!-- FLYING ANIMALS (inserted by JS) -->
+<div id="popup-animals"></div>
+
+<!-- WELCOME CARD -->
+<div id="welcome-card" class="welcome-card">
+  <span class="welcome-emoji">🧸</span>
+  <div class="welcome-title">Welcome to SoftNest!</div>
+  <div class="welcome-sub">
+    Handpicked plush dolls & stuffed animals<br>
+    🚚 Fast delivery all over Bangladesh<br>
+    💳 Cash on Delivery — no advance needed
+  </div>
+  <button class="welcome-close" onclick="closePopup()">Shop Now 🐾</button>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">🎉 20% OFF on all orders today</span>
+    <span class="marquee-item">🚚 Fast delivery all over Bangladesh</span>
+    <span class="marquee-item">💳 100% Cash on Delivery</span>
+    <span class="marquee-item">✅ Quality checked before every shipment</span>
+    <span class="marquee-item">🎁 Free gift wrapping available</span>
+    <span class="marquee-item">🔄 Easy return — your trust matters</span>
+    <span class="marquee-item">📞 Support 7 days a week</span>
+    <span class="marquee-item">⭐ 500+ happy customers</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">🎉 20% OFF on all orders today</span>
+    <span class="marquee-item">🚚 Fast delivery all over Bangladesh</span>
+    <span class="marquee-item">💳 100% Cash on Delivery</span>
+    <span class="marquee-item">✅ Quality checked before every shipment</span>
+    <span class="marquee-item">🎁 Free gift wrapping available</span>
+    <span class="marquee-item">🔄 Easy return — your trust matters</span>
+    <span class="marquee-item">📞 Support 7 days a week</span>
+    <span class="marquee-item">⭐ 500+ happy customers</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="logo">SoftNest <div class="logo-dot"></div></a>
+
+  <!-- Desktop categories -->
+  <div class="nav-center">
+    <button class="nav-cat active" onclick="setCategory(this,'animal')">
+      <span class="cat-icon">🐾</span> Animal Stuffed
+    </button>
+    <button class="nav-cat" onclick="setCategory(this,'gift')">
+      <span class="cat-icon">🎁</span> Gift Items
+    </button>
+  </div>
+
+  <div class="nav-right">
+    <div class="trust-pill">🇧🇩 Ships Nationwide</div>
+    <button class="order-btn">Order Now 🛒</button>
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-cat active" onclick="setMobileCategory(this,'animal')">🐾 Animal Stuffed</button>
+  <button class="mobile-cat" onclick="setMobileCategory(this,'gift')">🎁 Gift Items</button>
+  <button class="mobile-order">Order Now 🛒</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">🌸 New Arrivals — 2026 Collection</div>
+    <h1>Your desk deserves a <em>soft little</em> friend</h1>
+    <p class="hero-sub">
+      Adorable stuffed animals & companion dolls — perfect for your study table, bedroom shelf, or as a heartfelt birthday gift.
+    </p>
+
+    <div class="trust-chips">
+      <div class="chip">💳 Cash on Delivery</div>
+      <div class="chip">🚚 Steadfast & Pathao</div>
+      <div class="chip">✅ Quality Guaranteed</div>
+      <div class="chip">🎁 Gift Wrapping</div>
+      <div class="chip">🔄 Easy Returns</div>
+      <div class="chip">📞 7-day Support</div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#" class="cta-primary">Shop Collection 🐾</a>
+      <a href="#" class="cta-secondary">View Gift Items 🎁</a>
+    </div>
+  </div>
+
+  <!-- Desktop visual only -->
+  <div class="hero-right">
+    <div class="hero-display">
+      <div class="dot-dec dd1"></div>
+      <div class="dot-dec dd2"></div>
+      <div class="dot-dec dd3"></div>
+      <div class="center-card">🐱<span class="center-label">Desk Companion</span></div>
+      <div class="orbit-card oc-1">🐻<span class="orbit-label">Bear</span></div>
+      <div class="orbit-card oc-2">🦊<span class="orbit-label">Fox</span></div>
+      <div class="orbit-card oc-3">🐼<span class="orbit-label">Panda</span></div>
+      <div class="orbit-card oc-4">🐰<span class="orbit-label">Bunny</span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ── POPUP ─────────────────────────────────
+// Fewer animals on small screens
+const isMobile = window.innerWidth <= 680;
+
+const allAnimals = [
+  { emoji:'🐱', x:'8%',  y:'12%', delay:0    },
+  { emoji:'🐻', x:'84%', y:'10%', delay:0.1  },
+  { emoji:'🐰', x:'4%',  y:'72%', delay:0.2  },
+  { emoji:'🦊', x:'86%', y:'70%', delay:0.15 },
+  { emoji:'🐼', x:'48%', y:'4%',  delay:0.25 },
+  { emoji:'🐨', x:'18%', y:'86%', delay:0.05 },
+  { emoji:'🦁', x:'76%', y:'85%', delay:0.3  },
+  { emoji:'🐸', x:'43%', y:'88%', delay:0.18 },
+];
+
+// On mobile only show corner animals (4 instead of 8)
+const animals = isMobile ? allAnimals.slice(0,4) : allAnimals;
+const container = document.getElementById('popup-animals');
+
+animals.forEach(a => {
+  const el = document.createElement('div');
+  el.className = 'fly-animal';
+  el.textContent = a.emoji;
+  el.style.left = a.x;
+  el.style.top  = a.y;
+  el.style.animationDelay = a.delay + 's';
+  container.appendChild(el);
+});
+
+function closePopup() {
+  document.querySelectorAll('.fly-animal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('leaving'), i * 40);
+  });
+  const backdrop = document.getElementById('popup-backdrop');
+  const card     = document.getElementById('welcome-card');
+  setTimeout(() => {
+    backdrop.style.transition = 'opacity 0.4s';
+    backdrop.style.opacity = '0';
+    card.style.transition = 'opacity 0.4s, transform 0.4s';
+    card.style.opacity = '0';
+    card.style.transform = 'translate(-50%,-50%) scale(0.8)';
+  }, 200);
+  setTimeout(() => {
+    backdrop.remove(); card.remove(); container.remove();
+  }, 700);
+}
+
+// Auto close after 6s
+setTimeout(closePopup, 6000);
+
+// ── MOBILE MENU ───────────────────────────
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const hb   = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  hb.classList.toggle('open');
+}
+// Close menu when tapping outside
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobile-menu');
+  const hb   = document.getElementById('hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !hb.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+
+// ── CATEGORY ─────────────────────────────
+function setCategory(btn, cat) {
+  document.querySelectorAll('.nav-cat').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function setMobileCategory(btn, cat) {
+  document.querySelectorAll('.mobile-cat').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+</script>
+</body>
+</html>
